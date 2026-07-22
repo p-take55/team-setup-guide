@@ -1,79 +1,81 @@
 ---
 name: team-setup
-description: Guide an aachat Team from initial scope and fact-based Company Entity discovery through human Asks, Concept proposals, draft OKRs, first Projects, and operational handoff. Use when setting up a new Team, onboarding an existing organization into aachat, rebuilding an incomplete Company Map, or resuming a team setup Project that is waiting for answers, Concept publication, measurements, or human-only actions.
+description: aachat の Team を、最初の対象範囲確認と事実ベースの Company Entity 棚卸しから、人間への Ask、Concept proposal、draft OKR、最初の Project、運用 handoff まで案内する。新しい Team を立ち上げる、既存組織を aachat へ載せる、不完全な Company Map を組み直す、回答・Concept publish・計測・人間専用操作を待っている team setup Project を再開する、といったときに使う。
 ---
 
-# Team Setup
+# チームセットアップ
 
-Build the smallest complete Team model that lets humans and agents make the next decision and start the first Project. Preserve facts, human decisions, and uncertainty in their proper aachat surfaces.
+人間と agent が次の判断を下し、最初の Project を動かせる、**最小で完全な Team model** を作る。事実、人間の判断、不確実性を、それぞれ正しい aachat の置き場所に保つ。
 
-## Start or resume
+## 開始と再開
 
-0. Confirm that the session belongs to a setup Project. If no setup Project exists, do not mutate Team Registries; ask the human to start the Team Setup Discover template or explicitly choose a Project to hold the setup lifecycle.
-1. Read the current Project's `PROJECT.md`.
-2. Read the projected `aachat-session` contract before creating or editing any shared document.
-3. Read existing open and answered Project Asks before creating another one.
-4. Read the current Company, Concept, OKR, and Project state only where it can change the next action.
-5. Determine the current phase from Registry state, not from checked boxes alone.
-6. Continue the earliest blocking phase. Do not redo completed mutations.
+0. この session が setup Project に属していることを確認する。setup Project が無ければ Team Registry を変更しない。Discover の Team Setup template を開始するか、setup のライフサイクルを載せる Project を明示的に選ぶよう人間に依頼する。
+1. 現在の Project の `PROJECT.md` を読む。
+2. shared document を作成・編集する前に、投影された `aachat-session` contract を読む。
+3. 新しい Ask を作る前に、既存の未回答・回答済み Project Ask を読む。
+4. 現在の Company / Concept / OKR / Project の状態は、次の行動を変え得る範囲だけ読む。
+5. 現在の phase は、チェック済みのボックスではなく Registry の状態から判定する。
+6. 最も早い blocking phase から続ける。完了済みの mutation をやり直さない。
 
-If `PROJECT.md` does not yet identify an existing setup root or sponsor-confirmed root candidate, scope, exclusions, setup sponsor, and Registry steward who is a Team Owner / Admin capable of Concept publication and sensitive Entity operations, begin at Scope.
+`PROJECT.md` にまだ対象 root（既存 or sponsor 確認済み候補）・対象範囲・setup sponsor が定まっていなければ、Scope から始める。対象外・時間軸・Registry steward はここで分かる分だけ記録し、揃っていなくても Scope を通過してよい（steward は sensitive Entity 操作と Concept publish の前までに確定させる）。
 
-## Core loop
+## 中核ループ
 
-Run the same loop inside every phase:
+すべての phase の内側で同じループを回す:
 
 ```text
-inspect → form a small candidate set → surface unresolved decisions → Ask if needed
-        → apply confirmed mutations → reread canonical state → update handoff
+調べる → 小さな候補集合を作る → 未解決の判断を提示する → 必要なら Ask
+       → 確定した mutation を適用する → 正本の状態を再読込する → handoff を更新する
 ```
 
-Do not treat Ask as a single early phase. Distinguish blocking decisions from non-blocking backlog.
+Ask を最初の独立した 1 phase として扱わない。blocking な判断と、non-blocking な backlog を区別する。現在の phase の判断だけを扱い、先の phase の推奨（Entity の分割・parent など）を、事実を確認する前に混ぜない。
 
 ## Phase router
 
-| Phase | Read | Gate |
+| Phase | 読む | Gate（次へ進む条件） |
 |---|---|---|
-| Scope | `references/entity-discovery.md` | Existing root or sponsor-confirmed root candidate, scope, exclusions, sponsor, and Team Owner / Admin Registry steward are known |
-| Entities | `references/entity-discovery.md` and projected `aachat-company` | Confirmed normal Entities are registered and reread; human-only actions are classified |
-| Concepts | `references/concept-modeling.md` and projected `aachat-concepts` | Required proposals exist; Direction / Guardrail Concepts that materially shape or constrain the OKR are published |
-| Outcomes | `references/okr-and-projects.md` and projected `aachat-okr` | A valid draft OKR exists, or a measurement bootstrap Project and resume condition exist |
-| Initiatives | `references/okr-and-projects.md` | A human chose the first solution bet and its target KR is explicit |
-| Bootstrap | `references/completion.md` | Project docs and handoff are ready, and every required membership is verified in canonical Project state |
+| Scope | `references/entity-discovery.md` | 対象 root（既存 or sponsor 確認済み候補）・対象範囲・sponsor（判断者）が明確。対象外・時間軸・steward は未確定でも Phase 0 を止めない（steward は sensitive Entity 操作 / Concept publish 前、時間軸は Phase 3 で確定） |
+| Entities | `references/entity-discovery.md` と投影された `aachat-company` | 確認済みの通常 Entity が登録・再読込され、人間専用操作が分類されている |
+| Concepts | `references/concept-modeling.md` と投影された `aachat-concepts` | 必要な proposal が存在し、OKR を実質的に方向づけ・制約する Direction / Guardrail Concept が published である |
+| Outcomes | `references/okr-and-projects.md` と投影された `aachat-okr` | 有効な draft OKR が存在する、または計測整備 Project と再開条件が存在する |
+| Initiatives | `references/okr-and-projects.md` | 人間が最初の解決案（solution bet）を選び、その対象 KR が明確である |
+| Bootstrap | `references/completion.md` | Project docs と handoff が揃い、必要な membership が canonical な Project 状態で確認済みである |
 
-Read the referenced file completely before acting in that phase. Read projected `aachat-ask` before creating or waiting on an Ask.
+その phase で動く前に、参照ファイルを最後まで読む。Ask を作成・待機する前に投影された `aachat-ask` を読む。
 
-## Ask and pause
+## Ask と一時停止
 
-- Use Project Ask for decisions that outlive the current turn.
-- Ask only after showing confirmed context, the unresolved fork, a recommendation when justified, and what happens after each answer.
-- Allow `unknown / decide later` when it is a legitimate non-blocking outcome.
-- Put only actions that stop the current gate under `Waiting for human (blocking)`; keep deferred reviews and follow-ups in `Non-blocking follow-up` without changing the setup to `waiting_for_human`.
-- Project Ask answers do not automatically restart a session. Before stopping, update `PROJECT.md` with the Ask and tell the human to answer it and send the agent `回答したので続けて`.
-- On resume, read the answer and canonical Registry state. Do not rely on remembered transcript context.
+- 現在の turn を越えて残る判断には Project Ask を使う。
+- Ask は、確認済みの文脈、未解決の分岐、正当化できる場合の推奨、各回答後に何が起きるかを示してから行う。
+- 1 つの Ask に複数 Phase の判断を混ぜない。Scope の Ask で Entity 構成（分割・parent など）を一緒に聞かない。
+- 事実確認より先に Entity 構成や分割を推奨しない。まず確認済みの事実を示し、未確定点だけを分岐として出す。
+- `unknown / 後で決める` が正当な non-blocking の結論になり得る場合は、それを許容する。
+- 現在の gate を止める操作だけを `Waiting for human (blocking)` に置く。後回しにできる review や follow-up は、setup を `waiting_for_human` にせず `Non-blocking follow-up` に残す。
+- Project Ask への回答は session を自動再開しない。停止前に `PROJECT.md` に Ask を反映し、人間に「回答して、agent へ `回答したので続けて` と送る」よう伝える。
+- 再開時は回答と Registry の正本状態を読む。記憶している transcript の文脈に頼らない。
 
-Use bounded Session Ask only when an answer is expected in the current turn and waiting is genuinely useful. Do not poll tightly.
+回答が現在の turn で返り、待つことが本当に有用なときだけ、上限付きの Session Ask を使う。短間隔で polling しない。
 
-## Lifecycle gates
+## ライフサイクル gate
 
-- A Concept proposal is pending, not canonical. Never report it as published.
-- Add Entity `realizes` and OKR Concept links only after the Concept has current published content.
-- Block on publication only when the pending Direction / Guardrail materially changes or constrains the OKR or Project choice. Do not require `guidance_strength = governing`; carry auxiliary pending findings as explicit non-blocking work.
-- A draft OKR still requires 2–5 fully defined KRs with baseline and target. If measurement is unavailable, create a measurement bootstrap Project first and mark the setup `model_ready_partial`.
-- The agent may create a Project but does not claim that human member assignment, Concept publication, or sensitive Entity registration occurred. Reread after the human acts.
+- Concept proposal は pending であり正本ではない。published として報告しない。
+- Entity の `realizes` link と OKR の Concept link は、Concept に現在 published な内容がある後にだけ追加する。
+- publish を blocking にするのは、pending な Direction / Guardrail が OKR または Project の選択を実質的に変える・制約するときだけ。`guidance_strength = governing` を要求しない。補助的な pending finding は non-blocking として進める。
+- draft OKR には、baseline と target を備えた 2〜5 件の完全な KR が必要。計測できない場合は、先に計測整備 Project を作り、setup を `model_ready_partial` にする。
+- agent は Project を作れるが、人間による member 追加、Concept publish、sensitive Entity 登録が行われたとは主張しない。人間の操作後に再読込する。
 
-## Storage
+## 保存先
 
-- Keep canonical Entity, Concept, and OKR data in their Registries.
-- Keep questions and answers in Project Asks.
-- Keep project-specific decisions, verified inventories, and handoff in shared documents.
-- Do not persist speculative candidate tables as settled shared documents.
-- Use `templates/entity-inventory.md` only after facts are confirmed.
-- Use `templates/setup-handoff.md` at Model ready and update it at Operational.
+- Entity / Concept / OKR の正本データは各 Registry に置く。
+- 質問と回答は Project Ask に置く。
+- Project 固有の判断、検証済み inventory、handoff は shared document に置く。
+- 推測段階の候補テーブルを、確定した shared document として保存しない。
+- `templates/entity-inventory.md` は事実が確認された後にだけ使う。
+- `templates/setup-handoff.md` は Model ready で使い、Operational で更新する。
 
-## Finish
+## 完了
 
-Read `references/completion.md`. Report one of these states:
+`references/completion.md` を読む。次のいずれか 1 つの状態を報告する:
 
 - `in_progress`
 - `waiting_for_human`
@@ -81,4 +83,4 @@ Read `references/completion.md`. Report one of these states:
 - `model_ready`
 - `operational`
 
-Never collapse waiting, pending, draft, or partial states into complete.
+waiting / pending / draft / partial の状態を complete へ丸めない。

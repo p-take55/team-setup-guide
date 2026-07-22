@@ -1,68 +1,68 @@
-# Completion and resume states
+# 完了と再開の状態
 
-Use this reference before pausing, handing off, or declaring setup complete.
+一時停止・handoff・setup 完了の宣言の前にこの reference を使う。
 
-Choose exactly one state in this order:
+次の順序で、ちょうど 1 つの状態を選ぶ:
 
-1. `operational` when every operational condition is verified.
-2. `model_ready_partial` when the model is reviewable but a measurement or other declared prerequisite prevents a valid OKR or operational Project.
-3. `model_ready` only when every Model ready gate, including required Concept publication, is satisfied.
-4. `waiting_for_human` when an earlier gate is blocked by a human-only action.
-5. `in_progress` when the agent can continue safely.
+1. すべての運用条件を検証できたら `operational`。
+2. model は review できるが、計測などの宣言済み前提が有効な OKR または運用可能な Project を妨げるなら `model_ready_partial`。
+3. 必要な Concept publish を含むすべての Model ready gate を満たしたときにだけ `model_ready`。
+4. 先行する gate が人間専用操作で block されているなら `waiting_for_human`。
+5. agent が安全に続けられるなら `in_progress`。
 
-Record a human action separately under Waiting for human even when the selected milestone is `model_ready_partial`. The milestone states model completeness; the waiting field states who must act next.
+選んだ milestone が `model_ready_partial` でも、人間操作は Waiting for human に別で記録する。milestone は model の完成度を、waiting 欄は次に誰が動くべきかを表す。
 
-## State definitions
+## 状態の定義
 
 ### in_progress
 
-The agent can continue safely without new human authority or external state.
+agent が、新たな人間の権限や外部状態なしに安全に続けられる。
 
 ### waiting_for_human
 
-A blocking Ask, Concept publication, sensitive Entity mutation, member assignment, or other human-only action is outstanding.
+blocking な Ask、Concept publish、sensitive Entity mutation、member 追加、その他の人間専用操作が未完了。
 
-Before stopping:
+停止前に:
 
-- update `PROJECT.md` current phase and Waiting for human;
-- identify the exact resource or action;
-- state why it blocks and what remains non-blocking;
-- tell the human how to resume the agent after acting.
+- `PROJECT.md` の current phase と Waiting for human を更新する。
+- 対象の resource または操作を特定する。
+- なぜ block するか、何が non-blocking で残るかを述べる。
+- 操作後に agent を再開する方法を人間に伝える。
 
 ### model_ready_partial
 
-The Team model and intended outcome are reviewable, but a measurement bootstrap Project or another explicit prerequisite prevents a valid OKR or operational Project.
+Team model と意図した outcome は review できるが、計測整備 Project や別の明示的前提が有効な OKR または運用可能な Project を妨げている。
 
 ### model_ready
 
-Confirmed Entity state, intended outcome, problem choice, a valid OKR definition, and Project candidates are reviewable by the sponsor. Every Direction / Guardrail Concept that materially shapes or constrains that OKR is published; auxiliary proposals may remain pending as non-blocking work.
+確認済み Entity 状態、意図した outcome、問題の選択、有効な OKR 定義、Project 候補を sponsor が review できる。その OKR を実質的に方向づけ・制約する Direction / Guardrail Concept は published である。補助的な proposal は non-blocking な pending のまま残ってよい。
 
 ### operational
 
-All conditions hold:
+すべての条件を満たす:
 
-- required normal Entities are registered and reread;
-- blocking sensitive Entity actions are verified;
-- Direction / Guardrail Concepts that materially shape or constrain the OKR are published;
-- a valid draft OKR exists with 2–5 KRs;
-- the first Project exists with target KR and solution hypothesis;
-- required human members are present;
-- the first session brief and verification point are ready;
-- remaining work is explicitly non-blocking.
+- 必要な通常 Entity が登録・再読込されている。
+- blocking な sensitive Entity 操作が検証済み。
+- OKR を実質的に方向づけ・制約する Direction / Guardrail Concept が published。
+- 2〜5 件の KR を持つ有効な draft OKR が存在する。
+- target KR と solution 仮説を持つ最初の Project が存在する。
+- 必要な人間 member が揃っている。
+- 初回 session brief と検証 point が準備済み。
+- 残る作業が明示的に non-blocking。
 
-## Canonical verification
+## 正本での検証
 
-Never infer completion from prior tool responses or checklist text. Reread the relevant Company, Concept, OKR, Project, Ask, and membership state.
+過去の tool 応答やチェックリストの文言から完了を推測しない。関連する Company / Concept / OKR / Project / Ask / membership の状態を再読込する。
 
 ## Handoff
 
-Use `templates/setup-handoff.md`. Link to canonical resources rather than copying Registry content. Separate:
+`templates/setup-handoff.md` を使う。Registry の内容を複製せず、正本 resource へ link する。次を分ける:
 
-- achieved milestone;
-- registered and published state;
-- pending review;
-- human actions;
-- measurement or data prerequisites;
-- next Project action and responsible party.
+- 達成した milestone。
+- 登録・publish された状態。
+- pending review。
+- 人間操作。
+- 計測または data の前提。
+- 次の Project 行動と担当者。
 
-Close the setup Project only when the sponsor accepts the milestone and no setup-specific blocking action remains.
+sponsor が milestone を受け入れ、setup 固有の blocking 操作が残っていないときにだけ、setup Project を close する。

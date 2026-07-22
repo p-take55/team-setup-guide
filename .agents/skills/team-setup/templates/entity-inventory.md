@@ -1,30 +1,30 @@
 ---
-title: Verified Entity inventory
-summary: Confirmed Company Entity state and outstanding human-only actions for the setup scope.
+title: 確認済み Entity inventory
+summary: setup 対象範囲について、確認済みの Company Entity 状態と残る人間専用操作。
 status: verified
 ---
 
-# Verified Entity inventory
+# 確認済み Entity inventory
 
-## Scope
+## 対象範囲
 
 - Root:
-- Included:
-- Excluded:
+- 含める:
+- 除外:
 - Setup sponsor:
 
-## Verified Entities
+## 確認済み Entity
 
-| Entity | Kind | Status | Parent | Evidence | Registry state |
+| Entity | Kind | Status | Parent | 根拠 | Registry 状態 |
 |---|---|---|---|---|---|
 
-Only include confirmed facts. Link to the canonical Company Entity where possible.
+確認済みの事実だけを入れる。可能な限り canonical な Company Entity へ link する。
 
-## Human-only actions
+## 人間専用操作
 
-| Entity | Kind | Requested action | Blocking? | Verification |
+| Entity | Kind | 依頼する操作 | Blocking? | 検証 |
 |---|---|---|---|---|
 
-## Excluded or deferred
+## 除外・保留
 
-List scope decisions, not speculative Entity attributes.
+推測の Entity 属性ではなく、範囲の判断を記す。

@@ -1,51 +1,50 @@
 ---
-title: Team setup handoff
-summary: Current setup milestone, canonical resources, outstanding gates, and the first Project action.
+title: チームセットアップ handoff
+summary: 現在の setup milestone、正本 resource、残る gate、最初の Project 行動。
 status: in_progress
 ---
 
-# Team setup handoff
+# チームセットアップ handoff
 
 ## Milestone
 
 `in_progress | waiting_for_human | model_ready_partial | model_ready | operational`
 
-## Scope
+## 対象範囲
 
 - Root:
-- Included:
-- Excluded:
+- 含める:
+- 除外:
 - Setup sponsor:
 
-## Canonical state
+## 正本の状態
 
-- Company Entities:
-- Published Concepts:
-- Pending Concept proposals:
-- Draft or active OKRs:
-- First Project:
+- Company Entity:
+- Published Concept:
+- Pending Concept proposal:
+- Draft / active OKR:
+- 最初の Project:
 
-Link to canonical resources; do not copy their full contents.
+正本 resource へ link する。全文を複製しない。
 
 ## Waiting for human
 
-| Action | Why it matters | Blocking? | Resume instruction |
+| 操作 | なぜ重要か | Blocking? | 再開手順 |
 |---|---|---|---|
 
-## Measurement prerequisites
+## 計測の前提
 
-- Missing baseline or source:
-- Measurement bootstrap Project:
-- Condition that unlocks OKR registration:
+- 欠けている baseline / source:
+- 計測整備 Project:
+- OKR 登録を解く条件:
 
-## First Project action
+## 最初の Project 行動
 
-- Target problem:
-- Solution hypothesis:
+- 対象 problem:
+- Solution 仮説:
 - Target KR:
-- Owner / required members:
-- First session brief:
-- First verification point:
+- Owner / 必要 member:
+- 初回 session brief:
+- 最初の検証 point:
 
-## Remaining non-blocking work
-
+## 残る non-blocking 作業

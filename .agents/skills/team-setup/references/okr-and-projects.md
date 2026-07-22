@@ -1,58 +1,58 @@
-# OKRs and first Projects
+# OKR と最初の Project
 
-Use this reference for Outcomes and Initiatives. Read the projected `aachat-okr` skill before Registry operations; its lifecycle, KR, owner, Check-in, and link contracts are authoritative.
+この reference は Outcomes と Initiatives で使う。Registry 操作の前に投影された `aachat-okr` skill を読む。ライフサイクル、KR、owner、Check-in、link contract はそちらが正本。
 
-## Move from ideal to problem to outcome
+## 理想 → 問題 → outcome へ進む
 
-1. Ask which time horizon the human wants to plan for.
-2. Ask what should be observably different for whom at that horizon.
-3. Establish current reality from measurements and clearly labeled human observations.
-4. Separate symptoms, possible causes, constraints, and solution ideas.
-5. Compare problems by obstruction of the ideal, evidence, Team influence, dependency, and cost of delay.
-6. Recommend a problem when justified; let the human choose the problem the Team will own.
-7. Write the Objective as the state after that problem is sufficiently reduced.
-8. Define 2–5 KRs as evidence that the ideal is becoming real.
+1. 人間がどの時間軸で計画したいかを聞く。
+2. その時間軸で、誰にとって何が観測可能に変わるべきかを聞く。
+3. 現状を、測定値と明確にラベルした人間の観測から確立する。
+4. 症状、考えられる原因、制約、solution idea を分ける。
+5. 問題を、理想の妨げ度・根拠・Team の影響力・依存・遅延コストで比較する。
+6. 正当化できるとき問題を推奨し、Team が所有する問題は人間に選ばせる。
+7. その問題が十分に減った後の状態を Objective として書く。
+8. 理想が現実になりつつある証拠として、2〜5 件の KR を定義する。
 
-Do not translate a Concept directly into an OKR. Use published Concepts to check that the ideal and chosen problem align with Team direction and guardrails.
+Concept を直接 OKR へ翻訳しない。published Concept は、理想と選んだ問題が Team の direction と guardrail に沿うかの確認に使う。
 
-## Define KRs
+## KR を定義する
 
-Every KR needs a metric, unit, baseline, and distinct target. Prefer complementary observations such as attainment, speed, failure rate, human burden, or sustained behavior. Avoid multiple phrasings of the same signal.
+各 KR には metric、unit、baseline、明確に異なる target が要る。達成度、速度、失敗率、人間の負担、持続した行動など、補完的な観測を好む。同じ signal の言い換えを複数並べない。
 
-Never invent baseline or target. Ask where the measurement comes from and why the target matters. Targets may derive from history, customer commitments, economics, capacity, benchmarks, or an explicit human stretch choice.
+baseline や target を創作しない。測定がどこから来るか、なぜその target が重要かを聞く。target は、履歴、顧客との約束、経済性、capacity、benchmark、または人間の明示的な stretch 選択から導いてよい。
 
-## Measurement gap
+## 計測の欠落
 
-The OKR contract does not support a baseline-pending KR. If no defensible metric is measurable:
+OKR contract は baseline 未定の KR をサポートしない。妥当な metric を測定できない場合:
 
-1. test whether a valid observable proxy exists;
-2. otherwise create a measurement bootstrap Project before the OKR;
-3. mark setup `model_ready_partial`;
-4. record what measurement unlocks OKR registration and who will provide it;
-5. resume after baseline collection.
+1. 有効な観測可能 proxy が存在するか検証する。
+2. 無ければ、OKR の前に計測整備 Project を作る。
+3. setup を `model_ready_partial` にする。
+4. 何が測定できれば OKR 登録が解けるか、誰が提供するかを記録する。
+5. baseline 取得後に再開する。
 
-This measurement bootstrap is an explicit non-OKR exception: it has no target KR yet and exists only to unlock a valid OKR. After baseline collection, return to Outcomes before selecting the first solution bet. Do not disguise measurement installation as a Key Result.
+この計測整備は明示的な非 OKR の例外。まだ target KR を持たず、有効な OKR を解くためだけに存在する。baseline 取得後は、最初の solution bet を選ぶ前に Outcomes へ戻る。計測の導入を Key Result に偽装しない。
 
-## Select the first solution bet
+## 最初の solution bet を選ぶ
 
-Keep solutions out of Objective and KRs. Compare Project candidates by:
+solution を Objective と KR の外に保つ。Project 候補を次で比較する:
 
-- expected KR impact and causal rationale;
-- evidence supporting the solution hypothesis;
-- ability to execute and learn within the OKR period;
-- owner and member availability;
-- reversibility and learning if the bet fails.
+- 期待される KR への影響と因果の根拠。
+- solution 仮説を支える根拠。
+- OKR 期間内に実行し学べるか。
+- owner と member の空き。
+- bet が外れたときの可逆性と学び。
 
-Present a recommendation and let the human choose. Except for the measurement bootstrap above, create a Project only after the chosen problem and target KR are explicit.
+推奨を提示し、人間に選ばせる。上記の計測整備を除き、選んだ問題と target KR が明確になった後にだけ Project を作る。
 
-The Project handoff must contain:
+Project handoff には次を含める:
 
-- the selected problem and solution hypothesis;
-- target OKR and KRs;
-- why this Project should move them;
-- scope and non-goals;
-- first verification or Check-in point;
-- required human member action;
-- a first session brief that can be run without the setup transcript.
+- 選んだ問題と solution 仮説。
+- target OKR と KR。
+- なぜこの Project がそれらを動かすのか。
+- 範囲と non-goal。
+- 最初の検証または Check-in の point。
+- 必要な人間の member 操作。
+- setup transcript なしで実行できる初回 session brief。
 
-The agent can create a Project but must not claim member assignment occurred. Ask the human to add members, reread membership, then start the first session.
+agent は Project を作れるが、member 追加が行われたと主張してはならない。人間に member 追加を依頼し、membership を再読込してから初回 session を始める。
