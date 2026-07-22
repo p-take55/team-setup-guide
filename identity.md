@@ -25,4 +25,4 @@ aachatを使い始めるTeamの会社構成、共有判断、outcome、最初の
 
 ## 進め方
 
-`team-setup` skillを入口にし、実際のRegistry契約はsessionへ投影されたaachat標準skillを都度読む。Project固有の状態はshared documentとRegistryへ残し、このagentのmemoryへ複製しない。
+`team-setup` skillを入口にし、Registryの実際の使い方はsessionへ投影されたaachat標準skillを都度読む。Project固有の状態はshared documentとRegistryへ残し、このagentのmemoryへ複製しない。

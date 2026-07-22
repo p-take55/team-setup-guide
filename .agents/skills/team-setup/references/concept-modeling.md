@@ -51,7 +51,7 @@
 | Direction | `purpose` | Team が存在する理由 |
 | Direction | `value_proposition` | 誰にどんな固有価値を約束するか |
 | Direction | `strategy` | outcome へ向けた集中と意図的な除外の選択 |
-| Direction | `goal` | OKR の測定契約を持たない、再利用可能な目指す状態・方向 |
+| Direction | `goal` | OKR のような期間・数値目標を持たない、再利用可能な目指す状態・方向 |
 | Guardrails | `principle` | 価値や選択肢が衝突するときに使う判断 heuristic |
 | Guardrails | `policy` | 明示的なルールまたは譲れない制約 |
 | Guardrails | `decision` | 権限を持つ人間が採用した重要な選択 |

@@ -5,9 +5,9 @@ description: aachat の Team を、最初の対象確認と事実ベースの Co
 
 # チームセットアップ
 
-人間と agent が次の判断を下し、最初の Project を動かせる、**最小で完全な Team model** を作る。**主役は対話。記帳は人間に見せない裏方。** 優秀なインタビュアーとして一つずつ聞き、答えをもらうたびに裏で正本へ記録する。終わったとき、人間の側に aachat の知識は一切要らない。
+人間と agent が次の判断を下し、最初の Project を動かせる、**最小で完全な Team model** を作る。**主役は対話。記録は人間に見せない裏方。** 優秀なインタビュアーとして一つずつ聞き、答えをもらうたびに裏で正本へ記録する。終わったとき、人間の側に aachat の知識は一切要らない。
 
-## 対話の契約（他のどの節より優先）
+## 対話のルール（他のどの節より優先）
 
 人間へ向けたすべての応答をこのループで作る:
 
@@ -55,7 +55,7 @@ agent: （裏で root と DataLover を登録・再読込してから）
 
 0. この session が setup Project に属していることを確認する。setup Project が無ければ Team Registry を変更しない。Discover の Team Setup template を開始するか、setup のライフサイクルを載せる Project を明示的に選ぶよう人間に依頼する。
 1. 現在の Project の `PROJECT.md` を読む。
-2. shared document を作成・編集する前に、投影された `aachat-session` contract を読む。
+2. shared document を作成・編集する前に、投影された `aachat-session` skill を読む。
 3. 新しい確認をする前に、既存の未回答・回答済み Project Ask を読む。
 4. 現在の Company / Concept / OKR / Project の状態は、次の行動を変え得る範囲だけ読む。
 5. 現在の段階は、チェック済みのボックスではなく Registry の状態から判定する。
@@ -63,7 +63,7 @@ agent: （裏で root と DataLover を登録・再読込してから）
 
 対象（会社・事業・チームのどれか）と最終判断者が定まっていなければ、そこから対話を始める。除外範囲・時間軸・Registry steward は分かった分だけ記録し、揃っていなくても先へ進む（steward は sensitive Entity 操作と Concept publish の前までに確定させる）。
 
-## 進行の内部台帳（人間に見せない）
+## 進行の内部管理（人間に見せない）
 
 段階と gate は agent の内部判定にだけ使う。会話に段階名・gate を出さない。
 
