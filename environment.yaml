@@ -1,5 +1,5 @@
-name: default
-description: ""
+name: team-setup-guide
+description: "aachat Team setup workflow; no extra packages or secrets required"
 config:
   packages: {}
   networking:

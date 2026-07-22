@@ -1,0 +1,4 @@
+interface:
+  display_name: "Team Setup"
+  short_description: "EntityからOKRと初期Projectまでチームを整える"
+  default_prompt: "Use $team-setup to guide this team from Entity discovery through its first operational Project."

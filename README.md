@@ -1,49 +1,51 @@
-# {{agent_name}}
+# Team Setup Guide
 
-{{description}}
+事実ベースのEntity棚卸しから、Concept、OKR、最初のProjectが動き出すところまでを案内するaachat agentです。
 
-aachat の agent repository。`aachat up` で session が立ち上がる度にここから
-identity / memory / knowledge / skill が読み込まれ、agent の挙動を決める **永続ストレージ** として機能する。
+## できること
 
-## このrepoが定義するもの
+- セットアップ対象と判断者を確認する
+- Company Entityを棚卸しし、安全にRegistryへ登録する
+- 人間の意思、実際の判断、観測から必要なConceptを提案する
+- 時間軸での理想と現在の問題からdraft OKRを作る
+- 解決案を比較し、最初のProjectとhandoffを整える
+- Ask、Concept publish、計測不足、人間操作待ちから再開する
 
-| ファイル / ディレクトリ | 役割 | session への取り込み |
-|---|---|---|
-| `identity.md` | agent の人格・役割・行動原則の正本 | session worktree の `.claude/CLAUDE.md` に `<aachat-identity>` ブロックとして注入される |
-| `environment.yaml` | 依存パッケージ宣言（apt / brew / pip / npm / cargo） | リモート workspace 実行時の環境構築に使う |
-| `.claude/skills/<skill>/SKILL.md` | この agent 専用の skill | session worktree の `.claude/skills/<skill>/` に projection される（aachat 標準 skill と merge） |
-| `memory/` | session 間で引き継ぐ状態・優先順位・保留中の会話 | agent から自由に読み書きできる。push して初めて次 session に反映される |
-| `knowledge/` | 長期参照する事実・リファレンス・ドメイン知識 | 同上 |
+## 使い方
 
-> `identity.md` は旧 `CLAUDE.md` の置き換え。`.claude/CLAUDE.md` の `<aachat-managed>` 区画は session 起動時に aachat が毎回再生成するため、ここで CLAUDE.md を置いても上書きされて意味がない。
+1. aachatのDiscoverで`p-take55/team-setup-guide`を開き、Cloneして自分のcopyを作ります。
+2. copyを所有する環境で`aachat up`を実行し、agentがreadyになるまで待ちます。
+3. チームセットアップ用Projectの`Add Agent`から、そのcopyをmemberとして追加します。
+4. Composerのagent target chipで追加したagentを選び、「このProjectのチームセットアップを始めて」と送ります。
+5. Project Askへ回答した後は、同じ方法でagentを選び「回答したので続けて」と送ります。
 
-## ローカルでの場所
+Project timelineの`@mention`は通知であり、agent sessionを起動しません。
 
-aachat を立ち上げているマシン上では、この repo は次のパスに展開される（macOS / Linux）。
+テンプレートからagentは自動clone・自動配属されません。Projectを先に開始し、後から追加しても`PROJECT.md`から再開できます。
 
-| パス | 内容 | 触ってよい？ |
-|---|---|---|
-| `~/aachat/agents/{{agent_name}}/` | user-visible な worktree（`main` 追従） | ✅ identity / skills / memory の編集はここで |
-| `~/aachat/.run/cache/<owner>--{{agent_name}}.git/` | bare clone（aachat 内部キャッシュ） | ❌ 直接触らない |
-| `~/aachat/.run/workspaces/{{agent_name}}--<short-id>/aachat/agents/{{agent_name}}/` | session ごとの一時 worktree | ⚠️ session 中の作業領域。終了時にクリーンアップされる |
+## Workflow
 
-team repo を `aachat init` した側からは、`aachat/agents/{{agent_name}}/` というシンボリックリンク経由で `~/aachat/agents/{{agent_name}}/` と同じ場所が見える。
-
-## 編集の仕方
-
-- agent の挙動を変えたいときは `~/aachat/agents/{{agent_name}}/identity.md` を編集する
-- session 中の自己改善は agent 自身が `memory/` / `knowledge/` / `.claude/skills/` を更新する
-- 変更は **push して初めて次 session に反映される**（session worktree は使い捨てなので、その場の編集は session 終了で消える）
-
-## 触ってはいけないもの
-
-- 認証情報・トークン・秘密鍵（`.gitignore` で除外）
-- 絶対パス・環境固有の値
-
-## 話しかける
-
-```bash
-aachat project send <project> "@{{agent_name}} <依頼>"
+```text
+Scope → Entities → Concepts → Outcomes → Initiatives → Bootstrap
 ```
 
-`chat` CLI は session 内側の agent 専用。outside agent / 人間は `aachat` CLI を使う。
+各phaseで、調査、候補提示、必要なAsk、人間確認、Registry更新、再読込を反復します。重要なConceptがpendingの場合やbaselineを取得できない場合は、状態と再開条件を残して止まります。
+
+## 成果
+
+- 確認済みCompany Entity
+- review可能なConcept proposalと必要なpublished Concept
+- outcomeと2〜5件のKRを持つdraft OKR
+- 対象KRと解決仮説が明確な最初のProject
+- blocking / non-blockingな残課題と再開手順
+
+## Repo構成
+
+| Path | Role |
+|---|---|
+| `identity.md` | agentの役割と境界 |
+| `.agents/skills/team-setup/` | セットアップworkflowと参照資料 |
+| `environment.yaml` | runtime設定。追加packageやsecretは不要 |
+| `memory/` / `knowledge/` | 将来、Project固有ではない再利用知見が得られた場合だけ使用 |
+
+Project固有の事実、判断、仕様、進捗はagent repoではなく、対象Projectのshared documentと各Registryへ保存します。
