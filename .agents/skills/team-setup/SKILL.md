@@ -17,7 +17,7 @@ Build the smallest complete Team model that lets humans and agents make the next
 5. Determine the current phase from Registry state, not from checked boxes alone.
 6. Continue the earliest blocking phase. Do not redo completed mutations.
 
-If `PROJECT.md` does not yet identify the setup root, scope, exclusions, setup sponsor, and Registry steward who is a Team Owner / Admin capable of Concept publication and sensitive Entity operations, begin at Scope.
+If `PROJECT.md` does not yet identify an existing setup root or sponsor-confirmed root candidate, scope, exclusions, setup sponsor, and Registry steward who is a Team Owner / Admin capable of Concept publication and sensitive Entity operations, begin at Scope.
 
 ## Core loop
 
@@ -34,12 +34,12 @@ Do not treat Ask as a single early phase. Distinguish blocking decisions from no
 
 | Phase | Read | Gate |
 |---|---|---|
-| Scope | `references/entity-discovery.md` | Target root, scope, exclusions, sponsor, and Team Owner / Admin Registry steward are known |
+| Scope | `references/entity-discovery.md` | Existing root or sponsor-confirmed root candidate, scope, exclusions, sponsor, and Team Owner / Admin Registry steward are known |
 | Entities | `references/entity-discovery.md` and projected `aachat-company` | Confirmed normal Entities are registered and reread; human-only actions are classified |
 | Concepts | `references/concept-modeling.md` and projected `aachat-concepts` | Required proposals exist; Direction / Guardrail Concepts that materially shape or constrain the OKR are published |
 | Outcomes | `references/okr-and-projects.md` and projected `aachat-okr` | A valid draft OKR exists, or a measurement bootstrap Project and resume condition exist |
 | Initiatives | `references/okr-and-projects.md` | A human chose the first solution bet and its target KR is explicit |
-| Bootstrap | `references/completion.md` | Project docs, human member action, first session brief, and handoff are ready |
+| Bootstrap | `references/completion.md` | Project docs and handoff are ready, and every required membership is verified in canonical Project state |
 
 Read the referenced file completely before acting in that phase. Read projected `aachat-ask` before creating or waiting on an Ask.
 

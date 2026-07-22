@@ -6,17 +6,33 @@ Use this reference for Scope and Entities. Read the projected `aachat-company` s
 
 Confirm:
 
-- setup root and whether the target is a company, business, product, or team subtree;
+- existing setup root, or a sponsor-confirmed root candidate when the Company Registry is empty, and whether the target is a company, business, product, or team subtree;
 - included and excluded areas;
 - setup sponsor who can confirm facts and make tradeoffs;
 - Registry steward who is a Team Owner / Admin and can publish Concepts and manage `person`, `partner`, and `agreement`;
 - source material the sponsor authorizes the agent to read.
 
-Start with the Company root overview, then focus only on relevant subtrees. Do not fetch the whole Registry by default.
+Start with the Company root overview when it exists, then focus only on relevant subtrees. Do not fetch the whole Registry by default. If no root exists, Scope may complete with a verified root candidate name, `organization` kind, intended status, and evidence. Register it as the first Entities mutation, reread it, then replace the candidate in `PROJECT.md` with the canonical Entity ID / reference. Ask rather than inventing the root identity.
 
 ## Find candidates
 
 Look for stable components of the Team, not every noun in a document. Exclude tasks, campaigns, KPIs, responsibilities, relationships, and temporary work unless they independently qualify as a supported Entity kind.
+
+The projected `aachat-company` contract is authoritative for the current enum. Use these meanings when classifying:
+
+| Kind | Stable identity represented | Mutation |
+|---|---|---|
+| `organization` | Company, business, department, or team operating as a formal organizational unit | agent may mutate |
+| `person` | An individual who composes the Team | human only |
+| `offering` | Product, service, or plan continuously offered to customers | agent may mutate |
+| `media` | Persistent website, social account, newsletter, or other communication channel | agent may mutate |
+| `community` | Ongoing participant group with membership or a shared participation purpose | agent may mutate |
+| `system` | Major product or business system managed as part of company composition | agent may mutate |
+| `facility` | Persistent office, store, plant, location, or major facility | agent may mutate |
+| `partner` | External party with a confirmed continuing business or partnership relationship | human only |
+| `agreement` | Stable contract, license, or formal agreement identity | human only |
+
+Distinguish the customer-facing `offering` from the internal `system` that enables it; a formal `organization` from a participant `community`; and a confirmed continuing `partner` from a vendor merely mentioned in a source. Do not duplicate one identity across kinds.
 
 For each candidate verify:
 

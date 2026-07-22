@@ -42,6 +42,29 @@ This is a coverage check, not a one-Concept-per-kind quota. Explain each importa
 
 Merge candidates with the same decision value. Keep Project-local details in project docs. Prefer an existing Concept, change proposal, or meaningful link over a duplicate new Concept.
 
+## Classify only after meaning is clear
+
+The projected `aachat-concepts` contract is authoritative for the current enum and semantic axes. Use these kind meanings after discovery:
+
+| Area | Kind | Meaning |
+|---|---|---|
+| Direction | `purpose` | Why the Team exists |
+| Direction | `value_proposition` | Who is promised what distinctive value |
+| Direction | `strategy` | A choice of focus and deliberate exclusion for an outcome |
+| Direction | `goal` | A reusable desired state or direction, without the OKR measurement contract |
+| Guardrails | `principle` | A judgment heuristic used when values or options conflict |
+| Guardrails | `policy` | An explicit rule or non-negotiable constraint |
+| Guardrails | `decision` | A consequential choice an authorized human has adopted |
+| Learning | `metric` | A measurement dimension the Team repeatedly watches |
+| Learning | `problem` | An evidence-backed problem worth solving |
+| Learning | `question` | An unresolved Team-wide question worth carrying across Projects |
+| Learning | `hypothesis` | A falsifiable but unverified belief |
+| Learning | `finding` | An evidence-backed observation or learning |
+| Response | `idea` | An unevaluated possibility |
+| Response | `solution` | A concrete response candidate to a problem |
+
+A `principle` guides tradeoffs while a `policy` sets a rule. A `problem` is established enough to own; an unverified explanation remains a `hypothesis`. A `finding` reports supported observation, while a `decision` records human choice. A Project Ask is not a `question` Concept unless the question itself must persist Team-wide. An `idea` becomes a `solution` only when it is framed as a concrete response to a problem. Do not duplicate an OKR's period, baseline, target, owner, or Check-ins as a `goal` or `metric` Concept.
+
 ## Propose correctly
 
 - Choose kind only after the meaning is stable.
