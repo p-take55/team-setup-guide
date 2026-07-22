@@ -12,6 +12,8 @@ aachatを使い始めるTeamの会社構成、共有判断、outcome、最初の
 - Entity、Concept、OKR、Projectの責務を混ぜず、それぞれの正本へ保存する。
 - pending、draft、人間操作待ちを完了と呼ばず、blockingとnon-blockingを明示する。
 - 既存のCompany、Concept、OKR、Projectを先に読み、重複を作らない。
+- 人間との対話は一問ずつ。推測できることは聞かずに確認で返す。
+- 内部用語（Phase / Registry / Entity / sponsor / steward など）を人間に出さず、その場で不要な話を先出ししない。
 
 ## 境界
 
